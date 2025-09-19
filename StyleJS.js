@@ -28,24 +28,6 @@ async function changeLanguage(lang) {
 
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
-    toggleJapaneseStylesheet(lang);
-}
-
-// Toggle Japanese stylesheet when needed
-function toggleJapaneseStylesheet(lang) {
-    let link = document.getElementById("japanese-style");
-
-    if (lang === "jp") {
-        if (!link) {
-            link = document.createElement("link");
-            link.id = "japanese-style";
-            link.rel = "stylesheet";
-            link.href = "StyleJP.css"; // your Japanese-specific stylesheet
-            document.head.appendChild(link);
-        }
-    } else if (link) {
-        link.remove();
-    }
 }
 
 // Initialize when the DOM is ready
@@ -54,5 +36,5 @@ window.addEventListener('DOMContentLoaded', async () => {
     const langData = await fetchLanguageData(userPreferredLanguage);
 
     updateContent(langData);
-    toggleJapaneseStylesheet(userPreferredLanguage);
 });
+

@@ -1,44 +1,54 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <title>ClintTech-Portfolio</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="Style.css">
-    </head>
-    <body>
-        <nav class="NavBar">
-            <ul>
-            <a href="#Home">Home</a>
-            <a href="#AboutMe">About Me</a>
-            <a href="#Experience">Experience</a>
-            <a href="#Contact">Contact</a>
-            </ul>
-        </nav>
-        <div class="Home">
-            <h1>Clinton Eckenrod</h1>
-            <h2>Full Stack Developer & Artist</h2>
-            <h2>Nice to Meet You!</h2>
-            <ul>
-            <a href="#" lang ="English">ENG</a>
-            <a href="#" lang ="Japanese">日本語</a>
-            <a href="#" lang ="German">DEU</a>
-            </ul>
-        </div>
-        <div class="AboutMe">
-            <h1>About Me</h1>
-            <p>Hello! I am Clinton Eckenrod, a full stack developer, I love designing and making new webistes for people for free, I love writing and drawing in my spare time along with
-                constantly learning new things.</p>
-            <h3>Education</h3>
-            <p>I am currently in a Bachelors program at Colorado State University for Computer Science with a focus on machine learning and AI, I really have learned a lot so far from this program
-                such as creating algorithms and using deep learning to create new AI tools. I also have learned alot on my own about web/mobile development.</p> 
-            <img src="/Images/CSU-Ram.jpg" alt= "CSU Ram Logo" class ="Ram-Picture" />
-        </div>
-        <div class="Experience">
-            <h1>Experience</h1>
-        </div>
-        <div class = "Contact">
-            <h1>Contact Me</h1>
-        </div>
-    </body>
-</html>
+<html lang="en">
+<head>
+    <title>ClintTech-Portfolio</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="NavBar">
+        <ul>
+            <li><a href="#Home" data-i18n="Home"></a></li>
+            <li><a href="#AboutMe" data-i18n="About_Me"></a></li>
+            <li><a href="#Experience" data-i18n="Experience"></a></li>
+            <li><a href="#Contact" data-i18n="Contact"></a></li>
+        </ul>
+    </nav>
 
+    <!-- Home Section -->
+    <div class="Home" id="Home">
+        <h1 data-i18n="Name"></h1>
+        <h2 data-i18n="Dev"></h2>
+        <h2 data-i18n="Meet"></h2>
+        
+        <!-- Language Switcher -->
+        <ul>
+            <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+            <li><a href="#" onclick="changeLanguage('jp')">日本語</a></li>
+        </ul>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="AboutMe" id="AboutMe">
+        <h1 data-i18n="About_Me"></h1>
+        <p data-i18n="Intro"></p>
+        <h3 data-i18n="Education"></h3>
+        <p data-i18n="CSU"></p>
+        <img src="Assets/Images/CSU-Ram.jpg" alt="CSU Ram Logo" class="Ram-Picture" />
+    </div>
+
+    <!-- Experience Section -->
+    <div class="Experience" id="Experience">
+        <h1 data-i18n="Experience"></h1>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="Contact" id="Contact">
+        <h1 data-i18n="Contact"></h1>
+    </div>
+
+    <!-- Scripts -->
+    <script src="StyleJS.js"></script>
+</body>
+</html>

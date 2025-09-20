@@ -1,6 +1,145 @@
-h1{
-  color: blue;
-  background-color: black;
+body {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
 }
 
+html {
+    height: 100%;
+}
 
+/* Background layers */
+.stars, .twinkling, .clouds {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stars {
+    z-index: 0;
+    background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
+}
+
+.twinkling {
+    z-index: 1;
+    background: transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
+    animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+    z-index: 2;
+    background: transparent url('https://i.imgur.com/mHbScrQ.png') repeat top center;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+
+/* Centered Home section */
+.Home {
+    position: relative; /* ensure it's above background layers */
+    z-index: 10;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    color: 	DodgerBlue;
+    font-size: 100px;
+    margin: 0;
+}
+body {
+  background-color: black;
+  font-family: cursive;
+}
+
+h1 {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #003366, 0 0 40px #003366, 0 0 50px #003366, 0 0 60px #003366, 0 0 70px #003366;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #cce0ff, 0 0 30px #336699, 0 0 40px #336699, 0 0 50px #336699, 0 0 60px #336699, 0 0 70px #336699, 0 0 80px #336699;
+  }
+}
+@-webkit-keyframes glow2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
+  }
+}
+.Home h2 {
+    font-size: 50px;
+    line-height: 1.2;
+    color: black;
+    animation: glow2 .5s ease-in-out infinite alternate;
+}
+
+/* Navbar */
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    position: relative;
+    z-index: 20; /* higher than .Home (10) and backgrounds (0-2) */
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    letter-spacing: 2px;
+    padding: 14px 16px;
+    transition: background-color 0.5s;
+}
+
+.navbar ul li a:hover {
+    background-color: midnightblue;
+}
+
+.navbar p {
+    margin: 0;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+/* Profile Picture */
+.Ram-Picture {
+    border: 3px green solid;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}

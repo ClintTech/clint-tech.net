@@ -4,10 +4,14 @@
     <title>ClintTech-Portfolio</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="NavBar">
+    <nav class="navbar">
         <ul>
             <li><a href="#Home" data-i18n="Home"></a></li>
             <li><a href="#AboutMe" data-i18n="About_Me"></a></li>
@@ -15,12 +19,14 @@
             <li><a href="#Contact" data-i18n="Contact"></a></li>
         </ul>
     </nav>
-
+    <div class='stars'></div>
+<div class='twinkling'></div>
+<div class='clouds'></div>
     <!-- Home Section -->
     <div class="Home" id="Home">
         <h1 data-i18n="Name"></h1>
-        <h3 data-i18n="Dev"></h3>
-        <h3 data-i18n="Meet"></h3>
+        <h2 data-i18n="Dev"></h2>
+        <h2 data-i18n="Meet"></h2>
         
         <!-- Language Switcher -->
         <ul>
@@ -31,26 +37,24 @@
 
     <!-- About Me Section -->
     <div class="AboutMe" id="AboutMe">
-        <h2 data-i18n="About_Me"></h2>
+        <h1 data-i18n="About_Me"></h1>
         <p data-i18n="Intro"></p>
-        <h2 data-i18n="Education"></h2>
+        <h3 data-i18n="Education"></h3>
         <p data-i18n="CSU"></p>
-        <img src="Assets/Images/CSU-Ram.jpg" alt="CSU Ram Logo" class="Ram-Picture" />
+        <img src="Assets/Images/CSU-Ram.png" alt="CSU Ram Logo" class="Ram-Picture" />
     </div>
 
     <!-- Experience Section -->
     <div class="Experience" id="Experience">
-        <h2 data-i18n="Experience"></h2>
+        <h1 data-i18n="Experience"></h1>
     </div>
 
     <!-- Contact Section -->
     <div class="Contact" id="Contact">
-        <h2 data-i18n="Contact"></h2>
+        <h1 data-i18n="Contact"></h1>
     </div>
 
     <!-- Scripts -->
     <script src="StyleJS.js"></script>
 </body>
 </html>
-
-

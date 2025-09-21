@@ -6,7 +6,6 @@ function updateContent(langData) {
         }
     });
 }
-
 // Save the language preference
 function setLanguagePreference(lang) {
     localStorage.setItem('language', lang);
@@ -37,4 +36,21 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     updateContent(langData);
 });
+function splitLetters() {
+    document.querySelectorAll('.Home h1, .Home h2').forEach(el => {
+        el.innerHTML = el.textContent
+            .split('')
+            .map((ch, i) => `<span style="--i:${i}">${ch}</span>`)
+            .join('');
+    });
+}
 
+function updateContent(langData) {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (langData[key]) {
+            element.innerHTML = langData[key];
+        }
+    });
+    splitLetters(); // 🟢 wrap letters after content update
+}

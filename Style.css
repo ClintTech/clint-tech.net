@@ -4,47 +4,12 @@ body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
+    background-color: lightskyblue;
 }
 
+/* HTML height */
 html {
     height: 100%;
-}
-
-/* Background layers */
-.stars, .twinkling, .clouds {
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.stars {
-    z-index: 0;
-    background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
-}
-
-.twinkling {
-    z-index: 1;
-    background: transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
-    animation: move-twink-back 200s linear infinite;
-}
-
-.clouds {
-    z-index: 2;
-    background: transparent url('https://i.imgur.com/mHbScrQ.png') repeat top center;
-    animation: move-clouds-back 200s linear infinite;
-}
-
-@keyframes move-twink-back {
-    from {background-position:0 0;}
-    to {background-position:-10000px 5000px;}
-}
-
-@keyframes move-clouds-back {
-    from {background-position:0 0;}
-    to {background-position:10000px 0;}
 }
 
 /* Centered Home section */
@@ -61,48 +26,53 @@ html {
 
 /* Headings */
 h1 {
-    color: 	DodgerBlue;
-    font-size: 100px;
+    font-size: 80px;
+    color: gray;
+    text-align: center;
     margin: 0;
-}
-body {
-  background-color: black;
-  font-family: cursive;
+    letter-spacing: 2px;
 }
 
-h1 {
-  font-size: 80px;
-  color: #fff;
-  text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #003366, 0 0 40px #003366, 0 0 50px #003366, 0 0 60px #003366, 0 0 70px #003366;
-  }
-  
-  to {
-    text-shadow: 0 0 20px #cce0ff, 0 0 30px #336699, 0 0 40px #336699, 0 0 50px #336699, 0 0 60px #336699, 0 0 70px #336699, 0 0 80px #336699;
-  }
-}
-@-webkit-keyframes glow2 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
-  }
-  
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
-  }
-}
 .Home h2 {
     font-size: 50px;
     line-height: 1.2;
     color: black;
-    animation: glow2 .5s ease-in-out infinite alternate;
 }
 
-/* Navbar */
+/* Letter spin on hover for Home h1 and h2 */
+.Home h1 span,
+.Home h2 span {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    transform-origin: center;
+}
+
+/* When hovering over the full h1 or h2 */
+.Home h1:hover span,
+.Home h2:hover span {
+    transform: rotateY(360deg) scale(1.2);
+    transition-delay: calc(var(--i) * 0.05s); /* staggered wave */
+}
+
+/* Optional: add a scale effect for more pop */
+.Home h1 span:hover,
+.Home h2 span:hover {
+    transform: rotateY(360deg) scale(1.2);
+}
+
+/* Navbar styling */
+.jp, .en {
+    font-size: 30px;
+    padding: 15px;
+    color:gray;
+    list-style-type: none;
+}
+
+.jp a, .en a {
+    text-decoration: none;
+}
+
+/* Navbar list */
 .navbar ul {
     display: flex;
     justify-content: space-between;
@@ -112,7 +82,7 @@ h1 {
     padding: 0;
     background-color: #333333;
     position: relative;
-    z-index: 20; /* higher than .Home (10) and backgrounds (0-2) */
+    z-index: 20;
 }
 
 .navbar ul li a {

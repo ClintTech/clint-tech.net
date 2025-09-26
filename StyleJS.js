@@ -14,14 +14,13 @@ function setLanguagePreference(lang) {
 // Load the translation file for the selected language
 async function fetchLanguageData(lang) {
     try {
-        const response = await fetch(`Assets/${lang}.json`); // <-- fixed path
+        const response = await fetch(`Assets/${lang}.json`);
         return await response.json();
     } catch (error) {
         console.error(`Could not load language file: ${lang}`, error);
         return {}; // fallback if JSON is missing
     }
 }
-// Change the page language
 async function changeLanguage(lang) {
     setLanguagePreference(lang);
 
@@ -29,7 +28,6 @@ async function changeLanguage(lang) {
     updateContent(langData);
 }
 
-// Initialize when the DOM is ready
 window.addEventListener('DOMContentLoaded', async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'en';
     const langData = await fetchLanguageData(userPreferredLanguage);
@@ -37,7 +35,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     updateContent(langData);
 });
 function splitLetters() {
-    document.querySelectorAll('.Home h1, .Home h2').forEach(el => {
+    document.querySelectorAll('.Home h1, .Home h2, .AboutMe h1, .Experience h1, .Contact h1, h2, .Skills h1').forEach(el => {
         el.innerHTML = el.textContent
             .split('')
             .map((ch, i) => `<span style="--i:${i}">${ch}</span>`)
@@ -52,5 +50,5 @@ function updateContent(langData) {
             element.innerHTML = langData[key];
         }
     });
-    splitLetters(); // 🟢 wrap letters after content update
+    splitLetters();
 }

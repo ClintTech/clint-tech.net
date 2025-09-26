@@ -6,15 +6,12 @@ body {
     overflow-x: hidden;
     background-color: lightskyblue;
 }
-
-/* HTML height */
 html {
     height: 100%;
 }
-
-/* Centered Home section */
 .Home {
-    position: relative; /* ensure it's above background layers */
+    list-style: none;
+    position: relative;
     z-index: 10;
     display: flex;
     flex-direction: column; 
@@ -23,25 +20,46 @@ html {
     height: 100vh;
     text-align: center;
 }
-
-/* Headings */
+ul {
+    padding-inline-start: 0px;
+}
 h1 {
     font-size: 80px;
     color: gray;
     text-align: center;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 10px;
 }
 
 .Home h2 {
     font-size: 50px;
     line-height: 1.2;
     color: black;
+    letter-spacing: 5px;
 }
-
-/* Letter spin on hover for Home h1 and h2 */
+h2{
+    font-size: 40px;
+    color: black;
+    letter-spacing: 5px;
+}
+h3{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+p{
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.AboutMe h2{
+    text-align: center;
+}
 .Home h1 span,
-.Home h2 span {
+.AboutMe h1 span,
+.Experience h1 span,
+.Contact h1 span,
+.Skills h1 span {
     display: inline-block;
     transition: transform 0.5s ease;
     transform-origin: center;
@@ -49,27 +67,63 @@ h1 {
 
 /* When hovering over the full h1 or h2 */
 .Home h1:hover span,
-.Home h2:hover span {
+.AboutMe h1:hover span,
+.Experience h1:hover span,
+.Contact h1:hover span,
+.Skills h1:hover span {
     transform: rotateY(360deg) scale(1.2);
     transition-delay: calc(var(--i) * 0.05s); /* staggered wave */
 }
 
 /* Optional: add a scale effect for more pop */
 .Home h1 span:hover,
-.Home h2 span:hover {
+.AboutMe h1 span:hover,
+.Experience h1 span:hover,
+.Contact h1 span:hover,
+.Skills h1 span:hover {
     transform: rotateY(360deg) scale(1.2);
+}
+ h2 span {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    transform-origin: center;
+}
+
+/* When hovering over the full h1 or h2 */
+h2:hover span {
+    transform: rotateX(360deg) scale(1.2);
+    transition-delay: calc(var(--i) * 0.05s); /* staggered wave */
+}
+
+/* Optional: add a scale effect for more pop */
+h2 span:hover {
+    transform: rotateX(360deg) scale(1.2);
 }
 
 /* Navbar styling */
-.jp, .en {
+.jp, .en, .du, .ch {
     font-size: 30px;
     padding: 15px;
-    color:gray;
+    color:darkblue;
     list-style-type: none;
+    text-align: center;
+}
+.jp a:visited, .en a:visited, .du a:visited, .ch a:visited {
+    color:darkblue;
 }
 
-.jp a, .en a {
+
+.jp a, .en a, .du a, .ch a{
     text-decoration: none;
+    transition: border-color 1.2s ease-in-out; 
+    border: 2px solid rgba(255, 255, 255, 0);
+    
+}
+
+.jp a:hover, .en a:hover, .du a:hover, .ch a:hover {
+    color: red;
+    border: 3px solid black;
+    background-color: white;
 }
 
 /* Navbar list */
@@ -110,6 +164,106 @@ h1 {
 .Ram-Picture {
     border: 3px green solid;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;   /* allow 3D effects */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* depth shadow */
+    perspective: 1000px;  /* gives a 3D viewing perspective */
+}
+
+.Ram-Picture:hover {
+    transform: rotateY(360deg); /* 3D spin */
+}
+.Ram-Picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden; /* hide the back when rotating */
+}
+.MeImage{
+    float: right;
+    margin-right: 250px;
+    border: 3px white;
+    width: 200px;
+    height: 250px;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;   /* allow 3D effects */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* depth shadow */
+    perspective: 1000px;
+}
+.MeImage:hover{
+    transform: rotateX(360deg);
+}
+.MeImage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden; /* hide the back when rotating */
+}
+.Skills {
+    padding: 100px 20px;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+.Skills h1{
+    text-align: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.skill {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 250px;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.skill:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+.skill h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.skill p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #555;
+}
+.skill-images {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-images img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-images img:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.Contact{
+    background-color: white;
 }

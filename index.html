@@ -10,7 +10,6 @@
 
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <ul>
             <li><a href="#Home" data-i18n="Home"></a></li>
@@ -20,20 +19,41 @@
             <li><a href="#Contact" data-i18n="Contact"></a></li>
         </ul>
     </nav>
-    <!-- Home Section -->
     <div class="Home" id="Home">
         <h1 data-i18n="Name"></h1>
         <h2 data-i18n="Dev"></h2>
         <h2 data-i18n="Meet"></h2>
         <ul>
-            <li class="en"><a href="#" onclick="changeLanguage('en')">English</a></li>
-            <li class="jp"><a href="#" onclick="changeLanguage('jp')">日本語</a></li>
-            <li class="ch"><a href="#" onclick="changeLanguage('ch')">中文</a></li>
-            <li class="du"><a href="#" onclick="changeLanguage('du')">Deutsch</a></li>
+            <li>
+            <button class="pushable2" onclick="changeLanguage('en')">
+            <span class="shadow2"></span>
+            <span class="edge2"></span>
+            <span class="front2">English</span>
+            </button>
+            </li>
+            <li>
+            <button class="pushable2" onclick="changeLanguage('du')">
+            <span class="shadow2"></span>
+            <span class="edge2"></span>
+            <span class="front2">Deutsch</span>
+            </button>
+            </li>
+            <li>
+            <button class="pushable2" onclick="changeLanguage('jp')">
+            <span class="shadow2"></span>
+            <span class="edge2"></span>
+            <span class="front2">日本語</span>
+            </button>
+            </li>
+            <li>
+            <button class="pushable2" onclick="changeLanguage('ch')">
+            <span class="shadow2"></span>
+            <span class="edge2"></span>
+            <span class="front2">中文</span>
+            </button>
+            </li>
         </ul>
     </div>
-
-    <!-- About Me Section -->
     <div class="AboutMe" id="AboutMe">
         <h1 data-i18n="About_Me"></h1>
         <p data-i18n="Intro"></p>
@@ -46,27 +66,31 @@
 <div class="Skills" id="Skills">
     <h1 data-i18n="Skills"></h1>
     <h3 data-i18n="SkillsPage"></h3>
-    <li><a href="/Skills/Skills.html" data-i18n="Skills"></a></li>
+   <li>
+  <button class="pushable" onclick="window.location.href='Skills.html'">
+    <span class="shadow"></span>
+    <span class="edge"></span>
+    <span class="front" data-i18n="Skills">Skills</span>
+  </button>
+</li>
 </div>
-
-    <!-- Experience Section -->
     <div class="Experience" id="Experience">
         <h1 data-i18n="Experience"></h1>
         <p data-i18n="MyExperience"></p>
     </div>
-
-    <!-- Contact Section -->
     <div class="Contact" id="Contact">
         <h1 data-i18n="Contact"></h1>
         <h3 data-i18n="ContactMe"></h3>
         <h3 data-i18n="Email"></h3>
         <h3 data-i18n="Github"></h3>
-        <h3>GitHub</h3>
+        <li>
+  <button class="pushable" onclick="window.location.href='https://github.com/ClintTech'">
+    <span class="shadow"></span>
+    <span class="edge"></span>
+    <span class="front" data-i18n="Skill_Design_Github">Github</span>
+  </button>
+</li>
     </div>
-
-    <!-- Scripts -->
     <script src="StyleJS.js"></script>
 </body>
 </html>
-
-
